@@ -1,2 +1,2 @@
 # archipel
-Decentralized digital tagging of disinterested spaces.
+Decentralized digital tagging of dis/interested spaces.
