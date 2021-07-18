@@ -1,0 +1,11 @@
+.navbar-brand {
+  font-size: 30pt;
+}
+
+.alert {
+  visibility: hidden;
+}
+
+#main-map {
+  height: 50vh;
+}
