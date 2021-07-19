@@ -1,5 +1,23 @@
-.navbar-brand {
-  font-size: 30pt;
+body {
+  font-family: Spectral;
+  font-weight: 600;
+}
+
+#pills-tab {
+  font-size: 24pt;
+
+}
+
+#pills-about {
+  font-size: 18pt;
+}
+
+.nav-link.active {
+  background-color: black !important;
+}
+
+:not(.active).nav-link {
+  color: black;
 }
 
 .alert {
@@ -10,7 +28,7 @@
 }
 
 ol {
-    list-style: none;
+  list-style: none;
 }
 
 ol > li {
@@ -37,6 +55,7 @@ ol > li {
 .messageDivTitleText {
   height: 100%;
   font-size: 20pt;
+  font-variant-caps: all-small-caps;
 }
 
 #messageInputDiv {
@@ -48,6 +67,7 @@ ol > li {
   max-width: 92%;
   max-height: 60vh;
   overflow-y: scroll;
+  font-size: 14pt;
 }
 
 #messageInput {
@@ -58,6 +78,11 @@ ol > li {
 
 #main-map {
   height: 65vh;
+}
+
+#keyword-search {
+  font-size: 16pt;
+  font-variant-caps: all-small-caps;
 }
 
 #tag-info-pane {

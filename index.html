@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Leaflet CSS and JS -->
@@ -14,38 +18,97 @@
   </head>
   <body>
     <div class="container">
-      <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Archipel</a>
-        </div>
-      </nav>
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">ARCHIPEL</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-add-tag-tab" data-bs-toggle="pill" data-bs-target="#pills-add-tag" type="button" role="tab" aria-controls="pills-add-tag" aria-selected="false">Add Tag</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-mission-tab" data-bs-toggle="pill" data-bs-target="#pills-about" type="button" role="tab" aria-controls="pills-about" aria-selected="false">About</button>
+        </li>
+      </ul>
       <!-- Main view -->
-      <h2 class="mt-3 mb-3">Decentralized digital tagging of disinterested spaces</h2>
-      <div class="alert alert-danger d-flex align-items-center" role="alert" id="no-tag-alert">
-        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-        <div>
-          No tag exists with that keyword
-        </div>
-      </div>
-      <div class="row" id="map-messages-row">
-        <div class="col-lg-6" id="map-search-col">
-          <form id="search-form">
-            <div class="form-floating mb-3">
-              <input class="form-control" type="search" id="keyword-search" placeholder="Keyword" autofocus>
-              <label class="ms-2" for="keyword-search">Found a tag? Type the keyword here</label>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelled-by="pills-home-tab">
+          <h2 class="mt-3 mb-3">Open digital tagging of dis/interested spaces</h2>
+          <div class="alert alert-danger d-flex align-items-center" role="alert" id="no-tag-alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            <div>
+              No tag exists with that keyword
             </div>
-          </form>
-          <div class="row" id="map-row">
-            <div id="main-map"></div>
+          </div>
+          <div class="row" id="map-messages-row">
+            <div class="col-lg-6" id="map-search-col">
+              <form id="search-form">
+                <div class="form-floating mb-3">
+                  <input class="form-control" type="search" id="keyword-search" placeholder="Keyword">
+                  <label class="ms-2" for="keyword-search">Found a tag? Type the keyword here</label>
+                </div>
+              </form>
+              <div class="row" id="map-row">
+                <div id="main-map"></div>
+              </div>
+            </div>
+            <div id="tag-info-pane" class="col-lg-6">
+              <div id="combinedDiv">
+                <ol>
+                  <li>
+                    Take a sticker and place it somewhere that is meaningful to you.
+                    Especially important are places of DIS/INTEREST - those which are
+                    overlooked by conventional mapping technologies but are nonetheless
+                    important.
+                  </li>
+                  <li>
+                    Choose a unique TAGWORD and write it on the front of the sticker.
+                    Then, scan the QR code to be taken to the web app. There, you
+                    can add your new tag.
+                  </li>
+                  <li>
+                    Anyone who finds your tag will now be able to scan it and leave their
+                    own message, for yourself and others to find.
+                  </li>
+                </ol>
+              </div>
+            </div>
           </div>
         </div>
-        <div id="tag-info-pane" class="col-lg-6">
-          <div id="combinedDiv">
-            <p id="mission-statement">
-              This is our mission statement.  We are cucks.  We want to bring the
-              cucks of the world together in cuckoldry.
-            </p>
-          </div>
+        <!-- Add tag tab -->
+        <div class="tab-pane fade" id="pills-add-tag" role="tabpanel" aria-labelled-by="pills-add-tag-tab">
+          Tag adding coming soon!
+        </div>
+        <!-- About tab -->
+        <div class="tab-pane fade" id="pills-about" role="tabpanel" aria-labelledby="pills-about-tab">
+          <p>
+          Increasingly, we view our world through privately owned, profit-driven
+          lenses - the services we use to navigate, communicate, and understand
+          our environment. As the portion of our experiences which are filtered
+          through these technologies grows, our physical landscape begins to
+          resemble a digital one. The isolated spaces we occupy online become
+          analogous to the routines in our daily lives informed by our use of
+          proprietary technologies.
+          </p>
+
+          <p>
+          We hope that it is possible to disrupt these cycles, by creating a
+          more open sort of digital map - one which gives the power of
+          portraying a place to the people who live in it, and keeps itself
+          firmly grounded through the use of analog tags - stickers.
+          </p>
+          <p>
+          Over time, these tags will become a collective mapping of
+          experiences - a technological lens on the city which is not tinted
+          by profit motive.
+          </p>
+          <p>
+          At the outset, each tag will be simply a bulletin board of sorts
+          where people can leave short impressions, advice, or opinions.
+          But we hope to add questions which any visitor can answer, and
+          whose responses we can use to more organically understand our
+          city - ‘do you feel comfortable in this space?’, ‘how gentrified
+          is it here?’, ‘what does this space mean to you, in a word?’.
+          </p>
         </div>
       </div>
     </div>
