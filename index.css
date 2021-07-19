@@ -18,6 +18,10 @@ ol > li {
   margin: 0.5em 0 0.5em 0;
 }
 
+#rule {
+  margin: 1em 0 1em 0;
+}
+
 .messageText {
   font-size: 14pt;
 }
@@ -31,7 +35,8 @@ ol > li {
   text-align: center;
 }
 .messageDivTitleText {
-  font-size: 16pt;
+  height: 100%;
+  font-size: 20pt;
 }
 
 #messageInputDiv {
@@ -39,7 +44,9 @@ ol > li {
 }
 
 #combinedDiv {
-  padding-bottom: 25px;
+  padding: 0 0 25px 2em;
+  max-width: 92%;
+  max-height: 60vh;
   overflow-y: scroll;
 }
 
@@ -58,12 +65,24 @@ ol > li {
   mask-image: url("bubble.svg#bubbleClip");
   mask-size: contain;
   mask-repeat: no-repeat;
-  padding: 7% 9% 10% 4%;
+  padding: 7% 0% 5% 0%;
   color: white;
 }
 
 #mission-statement {
-  padding: 2em;
+  padding: 0 0 25px 2em;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #combinedDiv {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 1200px){
+  #combinedDiv {
+    max-width: 540px;
+  }
 }
 
 @media (max-width: 991.98px) {

@@ -32,14 +32,14 @@ function postMessage(tag) {
       })
       .then((res) => res.json())
       .then((newTag) => {
-        displayTagInfo(newTag);
+        displayTagInfo(newTag, false);
       })
       .catch((err) => {console.error("Message post error %o", err)});
     }
   }
 }
 
-function displayTagInfo(tag) {
+function displayTagInfo(tag, searchResult) {
   console.log("Found tag: %o", tag);
   // Clear out any stuff that needs to go
   let mission = document.getElementById("mission-statement");
@@ -58,13 +58,15 @@ function displayTagInfo(tag) {
 
   // Assemble the title header for the message bubble
   let messageTitle = document.createElement("div");
-  messageTitle.innerText = "Tag:  ";
   messageTitle.classList.add("messageDivTitle");
   messageTitleText = document.createElement("span");
   messageTitleText.classList.add("messageDivTitleText");
   messageTitleText.innerText = tag.tag_name;
   messageTitle.appendChild(messageTitleText);
   messageDiv.appendChild(messageTitle);
+  let hr = document.createElement("hr");
+  hr.id = "rule";
+  messageDiv.appendChild(hr);
   // Assemble the list of messages
   let messageList = document.createElement("ol");
   messageDiv.appendChild(messageList);
@@ -102,6 +104,10 @@ function displayTagInfo(tag) {
   combinedDiv.appendChild(messageDiv);
   combinedDiv.appendChild(inputDiv);
   pane.appendChild(combinedDiv);
+  if (!searchResult) {
+    input.scrollIntoView();
+    input.focus();
+  }
 }
 
 // keyword search for tags
@@ -121,7 +127,7 @@ document.getElementById("search-form").addEventListener("submit", function(e){
         clearAllMarkers()
         L.marker([tag.lat, tag.lon]).addTo(myMap);
         myMap.flyTo([tag.lat, tag.lon], 17);
-        displayTagInfo(tag);
+        displayTagInfo(tag, true);
       })
     }
   })
