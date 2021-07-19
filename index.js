@@ -1,4 +1,4 @@
-let apiHost = "http://localhost:5000";
+let apiHost = "http://172.104.251.84:5000";
 var allTagMarkers = [];
 
 // create the map
