@@ -7,7 +7,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(myMap);
 
 function clearAlerts() {
-  document.querySelectorAll('.alert').forEach((e) => {e.style.visibility = "hidden"});
+  document.querySelectorAll('.alert').forEach((e) => {e.style.opacity = "0%"});
 }
 
 // keyword search for tags
@@ -16,10 +16,11 @@ document.getElementById("search-form").addEventListener("click", clearAlerts);
 document.getElementById("search-form").addEventListener("submit", function(e){
   e.preventDefault();
   let keyword = document.getElementById("keyword-search").value;
+  // TODO: use actual backend
   fetch("/tag/" + keyword, {method: "GET"})
   .then(function(response) {
     if (response.status == 404) {
-      document.getElementById("no-tag-alert").style.visibility = "visible"
+      document.getElementById("no-tag-alert").style.opacity = "100%";
     }
     if (response.ok) {
       response.json().then(tagObj => {

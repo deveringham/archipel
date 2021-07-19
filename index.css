@@ -3,7 +3,10 @@
 }
 
 .alert {
-  visibility: hidden;
+  opacity: 0%;
+  transition-property: opacity;
+  transition-timing-function: ease;
+  transition-duration: 0.1s;
 }
 
 #main-map {
