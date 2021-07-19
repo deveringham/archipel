@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 63">
+  <rect x="0" y="0" width="52" height="63" fill="black" clip-path="url(#bubbleClip)" />
+  <clipPath id="bubbleClip">
+    <path d="M 51.1 57.1 L 50.3 32 L 50.9 8.6 L 49.5 0.8 L 30.7 3 L 16.49 2.11 L 5.47 3.25 L 0.52 22.86 L 1.68 56.28 L 24.75 61.5 L 46.55 62.08 Z" fill="#000000"/>
+  </clipPath>
+</svg>

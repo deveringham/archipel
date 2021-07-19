@@ -9,6 +9,66 @@
   transition-duration: 0.1s;
 }
 
+ol {
+    list-style: none;
+}
+
+ol > li {
+  border: 1px gray;
+  margin: 0.5em 0 0.5em 0;
+}
+
+.messageText {
+  font-size: 14pt;
+}
+
+.messageTime {
+  font-size: 8pt;
+  margin-left: 2em;
+}
+
+.messageDivTitle {
+  text-align: center;
+}
+.messageDivTitleText {
+  font-size: 16pt;
+}
+
+#messageInputDiv {
+  margin-left: 2em;
+}
+
+#combinedDiv {
+  padding-bottom: 25px;
+  overflow-y: scroll;
+}
+
+#messageInput {
+  background-color: black;
+  color: white;
+  border: 1px line white;
+}
+
 #main-map {
-  height: 50vh;
+  height: 65vh;
+}
+
+#tag-info-pane {
+  background-color: black;
+  mask-image: url("bubble.svg#bubbleClip");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  padding: 7% 9% 10% 4%;
+  color: white;
+}
+
+#mission-statement {
+  padding: 2em;
+}
+
+@media (max-width: 991.98px) {
+  #tag-info-pane {
+    min-height: 75vh;
+    mask-image: url("bubble_below.svg#bubbleClip");
+  }
 }
